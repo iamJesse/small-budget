@@ -22,7 +22,7 @@ def main():
             print('Your balance is', totalBudget)
         elif choice == 4:
             endProgram = 'yes'
-            print('Thank you for using my budget program, Goodbye')
+            print('Thank you for using my budget.txt program, Goodbye')
         else:
             print('Invalid selection, please try again')
 
@@ -33,17 +33,17 @@ def addExpense(totalBudget):
     totalExpense = expense * timesPerMonth
     totalBudget = totalBudget - totalExpense
     if totalExpense <= totalBudget:
-        print ('The expenses was accepted, your remaining budget is: ${0}'.format(totalBudget))
+        print ('The expenses was accepted, your remaining budget.txt is: ${0}'.format(totalBudget))
         return totalBudget
     else:
-        print ('The expenses was rejected because the budget exceeded.')
+        print ('The expenses was rejected because the budget.txt exceeded.')
 
 
 def addRevenue(totalBudget):
     print(totalBudget)
     revenue = float(input('Enter new monthly income: $'))
     totalBudget = totalBudget + revenue
-    print('your new budget is: ${0}'.format(totalBudget))
+    print('your new budget.txt is: ${0}'.format(totalBudget))
     return totalBudget
 
 main()
