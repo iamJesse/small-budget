@@ -4,7 +4,7 @@ __author__ = 'ivaylo spasov'
 
 def main():
     endProgram = 'no'
-    totalBudget = float(4000)
+    totalBudget = float(0.0)
     while endProgram == 'no':
         print('Welcome to the Personal Budget Program')
         print('Menu Selections: ')
