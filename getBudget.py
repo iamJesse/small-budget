@@ -2,8 +2,11 @@
 
 __author__ = 'ivaylo'
 
+
 def getBudget():
-    openBudget = open('budget.txt', 'r+')
+    openBudget = open('budget', 'w')
+    addToBudget = float(input('enter float: '))
+    currentBudget = openBudget.write(str(addToBudget))
     openBudget.close()
 
 
