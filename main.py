@@ -2,11 +2,10 @@
 
 __author__ = 'ivaylo spasov'
 
-
 def main():
-    endprogram = 'no'
-    totalbudget = float(4000)
-    while endprogram == 'no':
+    endProgram = 'no'
+    totalBudget = float(4000)
+    while endProgram == 'no':
         print('Welcome to the Personal Budget Program')
         print('Menu Selections: ')
         print('1-Add an Expense: ')
@@ -16,35 +15,35 @@ def main():
 
         choice = int(input('enter your selection: '))
         if choice == 1:
-            totalbudget = addexpense(totalbudget)
+            totalBudget = addExpense(totalBudget)
         elif choice == 2:
-            totalbudget = addRevenue(totalbudget)
+            totalBudget = addRevenue(totalBudget)
         elif choice == 3:
-            print('Your balance is', totalbudget)
+            print('Your balance is', totalBudget)
         elif choice == 4:
-            endprogram = 'yes'
+            endProgram = 'yes'
             print('Thank you for using my budget program, Goodbye')
         else:
             print('Invalid selection, please try again')
 
 
-def addexpense(totalbudget):
+def addExpense(totalBudget):
     expense = float(input('Enter your expense amount: $'))
-    monthly = int(input('How many times per month: '))
-    totalexpense = expense * monthly
-    totalbudget = totalbudget - totalexpense
-    if totalexpense <= totalbudget:
-        print ('The expenses was accepted, your remaining budget is: ${0}'.format(totalbudget))
-        return totalbudget
+    timesPerMonth = int(input('How many times per month: '))
+    totalExpense = expense * timesPerMonth
+    totalBudget = totalBudget - totalExpense
+    if totalExpense <= totalBudget:
+        print ('The expenses was accepted, your remaining budget is: ${0}'.format(totalBudget))
+        return totalBudget
     else:
         print ('The expenses was rejected because the budget exceeded.')
 
 
-def addRevenue(totalbudget):
-    print(totalbudget)
+def addRevenue(totalBudget):
+    print(totalBudget)
     revenue = float(input('Enter new monthly income: $'))
-    totalbudget = totalbudget + revenue
-    print('your new budget is: ${0}'.format(totalbudget))
-    return totalbudget
+    totalBudget = totalBudget + revenue
+    print('your new budget is: ${0}'.format(totalBudget))
+    return totalBudget
 
 main()
