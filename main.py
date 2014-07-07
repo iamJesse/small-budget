@@ -27,7 +27,7 @@ def main():
             print('Your balance is', totalBudget)
         elif choice == 4:
             endProgram = 'yes'
-            print('Thank you for using my budget program, Goodbye')
+            print('Thank you for using "Small budget" program, Goodbye')
         else:
             print('Invalid selection, please try again')
 
