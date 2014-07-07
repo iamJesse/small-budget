@@ -2,6 +2,7 @@
 
 __author__ = 'ivaylo spasov'
 
+
 import os
 import csv
 
@@ -25,9 +26,8 @@ def read_csv(filepath):
         reader = csv.reader(csvfile)
 #       print(reader)
         for row in reader:
-            print(row[0])
             currentBudget = float(row[0])
             return currentBudget
 
 
-read_csv(path)
+currentBudget = float(read_csv(path))
