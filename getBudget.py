@@ -4,8 +4,6 @@ __author__ = 'ivaylo spasov'
 
 import os
 import csv
-import random
-import string
 
 filename = 'budget.csv'
 dataDir = 'data'
@@ -28,8 +26,8 @@ def read_csv(filepath):
 #       print(reader)
         for row in reader:
             print(row[0])
-#           print(float(row[0]))
-#           print(type(float(row[0])))
+            currentBudget = float(row[0])
+            return currentBudget
 
 
 read_csv(path)
