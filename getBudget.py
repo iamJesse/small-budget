@@ -11,14 +11,11 @@ dataDir = 'data'
 
 
 def get_file_path(filename):
+#   Get the current working directory
     currenDirPath = os.getcwd()
-#   print(currenDirPath)
-    file_path = os.path.join(currenDirPath, dataDir, filename)
-#   print(file_path)
-    return file_path
-
-
-path = get_file_path(filename)
+#   Get the full path of the file budget.csv by joining paths
+    filepath = os.path.join(currenDirPath, dataDir, filename)
+    return filepath
 
 
 def read_csv(filepath):
@@ -30,4 +27,9 @@ def read_csv(filepath):
             return currentBudget
 
 
+path = get_file_path(filename)
+
 currentBudget = float(read_csv(path))
+
+if __name__ == '__main__':
+    get_file_path(filename)

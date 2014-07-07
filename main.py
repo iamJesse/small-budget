@@ -2,6 +2,8 @@
 
 __author__ = 'ivaylo spasov'
 
+import os
+import csv
 from getBudget import *
 
 
@@ -14,7 +16,7 @@ def main():
         print('1-Add an Expense: ')
         print('2-Add Revenue: ')
         print('3-Check Budget Balance: ')
-        print('4-Exit')
+        print('4-Save and exit')
 
         choice = int(input('enter your selection: '))
         if choice == 1:
