@@ -4,8 +4,7 @@ __author__ = 'ivaylo spasov'
 
 import os
 import csv
-from getBudget import *
-
+from getBudget import currentBudget, path
 
 def main():
     endProgram = 'no'
@@ -16,7 +15,8 @@ def main():
         print('1-Add an Expense: ')
         print('2-Add Revenue: ')
         print('3-Check Budget Balance: ')
-        print('4-Save and exit')
+        print('4-Save progress')
+        print('5-Exit without saving')
 
         choice = int(input('enter your selection: '))
         if choice == 1:
@@ -24,12 +24,15 @@ def main():
         elif choice == 2:
             totalBudget = addRevenue(totalBudget)
         elif choice == 3:
-            print('Your balance is', totalBudget)
+            print('Your balance is {0}'.format(totalBudget))
         elif choice == 4:
+            totalBudget = saveBudget(totalBudget)
+        elif choice == 5:
             endProgram = 'yes'
             print('Thank you for using "Small budget" program, Goodbye')
         else:
             print('Invalid selection, please try again')
+
 
 
 def addExpense(totalBudget):
@@ -42,13 +45,19 @@ def addExpense(totalBudget):
         return totalBudget
     else:
         print ('The expenses was rejected because the budget exceeded.')
+        totalBudget = totalBudget
+        return totalBudget
 
 
 def addRevenue(totalBudget):
-    print(totalBudget)
     revenue = float(input('Enter new monthly income: $'))
     totalBudget = totalBudget + revenue
     print('your new budget is: ${0}'.format(totalBudget))
     return totalBudget
+
+
+def saveBudget(totalBudget):
+    cb = print(totalBudget)
+    return cb
 
 main()

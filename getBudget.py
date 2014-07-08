@@ -18,18 +18,14 @@ def get_file_path(filename):
     return filepath
 
 
-def read_csv(filepath):
-    with open(filepath, 'rU') as csvfile:
+def read_csv(file_path):
+    with open(file_path, 'rU') as csvfile:
         reader = csv.reader(csvfile)
-#       print(reader)
         for row in reader:
-            currentBudget = float(row[0])
-            return currentBudget
-
+            cBudget = row[0]
+            return cBudget
+    csvfile.close()
 
 path = get_file_path(filename)
 
 currentBudget = float(read_csv(path))
-
-if __name__ == '__main__':
-    get_file_path(filename)
