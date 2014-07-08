@@ -20,3 +20,6 @@ def readBudget(file_path):
 
 path = get_file_path(filename)
 currentBudget = float(readBudget(path))
+
+if '__name__' == '__main__':
+    readBudget(path)

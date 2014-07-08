@@ -2,8 +2,6 @@
 
 __author__ = 'ivaylo spasov'
 
-import os
-#import csv
 from getBudget import currentBudget, path
 
 def main():
@@ -26,7 +24,6 @@ def main():
         elif choice == 3:
             print('Your balance is {0}'.format(totalBudget))
         elif choice == 4:
-            print(totalBudget)
             saveBudget(totalBudget)
             print('Thanks for saving your progress')
         elif choice == 5:
@@ -41,13 +38,12 @@ def addExpense(totalBudget):
     expense = float(input('Enter your expense amount: $'))
     timesPerMonth = int(input('How many times per month: '))
     totalExpense = expense * timesPerMonth
-    totalBudget = totalBudget - totalExpense
-    if totalExpense <= totalBudget:
+    if totalBudget - totalExpense >= 0:
+        totalBudget = totalBudget - totalExpense
         print ('The expenses was accepted, your remaining budget is: ${0}'.format(totalBudget))
         return totalBudget
     else:
         print ('The expenses was rejected because the budget exceeded.')
-        totalBudget = totalBudget
         return totalBudget
 
 
