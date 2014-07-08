@@ -26,7 +26,8 @@ def main():
         elif choice == 3:
             print('Your balance is {0}'.format(totalBudget))
         elif choice == 4:
-            totalBudget = saveBudget(totalBudget)
+#           saveBudget(totalBudget)
+            print('Thanks for saving your progress')
         elif choice == 5:
             endProgram = 'yes'
             print('Thank you for using "Small budget" program, Goodbye')
@@ -57,7 +58,8 @@ def addRevenue(totalBudget):
 
 
 def saveBudget(totalBudget):
-    cb = print(totalBudget)
-    return cb
+    with open(path, 'w') as f:
+        writer = csv.writer(f)
+    f.close()
 
 main()
