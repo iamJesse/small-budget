@@ -3,7 +3,7 @@
 __author__ = 'ivaylo spasov'
 
 import os
-import csv
+#import csv
 from getBudget import currentBudget, path
 
 def main():
@@ -26,7 +26,8 @@ def main():
         elif choice == 3:
             print('Your balance is {0}'.format(totalBudget))
         elif choice == 4:
-#           saveBudget(totalBudget)
+            print(totalBudget)
+            saveBudget(totalBudget)
             print('Thanks for saving your progress')
         elif choice == 5:
             endProgram = 'yes'
@@ -59,7 +60,7 @@ def addRevenue(totalBudget):
 
 def saveBudget(totalBudget):
     with open(path, 'w') as f:
-        writer = csv.writer(f)
+        f.write(str(totalBudget))
     f.close()
 
 main()
