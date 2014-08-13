@@ -16,7 +16,6 @@ def readBudget(file_path):
     with open(file_path, 'r') as f:
         cBudget = f.read()
         return cBudget
-        f.close()
 
 path = get_file_path(filename)
 currentBudget = float(readBudget(path))
